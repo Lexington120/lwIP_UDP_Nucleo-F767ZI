@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -98,7 +98,7 @@ void MX_LWIP_Init(void)
   }
 
   /* Set the link callback function, this function is called on change of link status*/
-  //netif_set_link_callback(&gnetif, ethernetif_update_config);
+  netif_set_link_callback(&gnetif, ethernetif_update_config);
 
   /* Create the Ethernet link handler thread */
 

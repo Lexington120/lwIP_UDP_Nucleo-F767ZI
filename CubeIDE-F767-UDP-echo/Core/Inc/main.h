@@ -61,10 +61,16 @@ void udp_echoclient_send(void);
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
-#define DEST_IP_ADDR0 192
-#define DEST_IP_ADDR1 168
-#define DEST_IP_ADDR2 0
-#define DEST_IP_ADDR3 11
+
+//#define DEST_IP_ADDR0 192
+//#define DEST_IP_ADDR1 168
+//#define DEST_IP_ADDR2 0
+//#define DEST_IP_ADDR3 11
+
+#define DEST_IP_ADDR0 169
+#define DEST_IP_ADDR1 254
+#define DEST_IP_ADDR2 30
+#define DEST_IP_ADDR3 167
 
 #define UDP_SERVER_PORT 5005
 #define UDP_HOST_PORT 5005

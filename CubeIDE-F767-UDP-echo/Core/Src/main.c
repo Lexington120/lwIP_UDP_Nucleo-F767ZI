@@ -48,7 +48,7 @@
 /* USER CODE BEGIN PV */
 	u8_t data[50];
 	__IO uint32_t message_count = 0;
-	struct udp_pcb *upcb;
+	struct udp_pcb *upcb; // UDP control block
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,7 +70,6 @@ void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
 
   /* USER CODE END 1 */
 
@@ -94,7 +93,7 @@ int main(void)
   MX_GPIO_Init();
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
-  udp_echoclient_connect();
+  udp_echoclient_connect(); // Connect to UDP echo server
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,10 +101,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		MX_LWIP_Process();
 
-		//If you want to send some other data
-		//udp_echoclient_send();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -180,7 +176,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
 }
-//////////////////////////////////////////////////////////////////////
+
 /* USER CODE BEGIN 4 */
 
 
@@ -191,7 +187,7 @@ static void MX_GPIO_Init(void)
   */
 void udp_echoclient_connect(void)
 {
-  ip_addr_t DestIPaddr;
+  ip_addr_t DestIPaddr; // server IP address (169.254.30.167)
   err_t err;
 
   /* Create a new UDP control block  */
@@ -215,7 +211,7 @@ void udp_echoclient_connect(void)
 }
 
 /* This function isn't really used in this demo, but if you wanted to send a custom message back
- * then just call this function and changed the second argument in the sprintf statement
+ * then just call this function and change the second argument in the sprintf statement
  * to a string of your choice.
  */
 void udp_echoclient_send(void)
@@ -241,7 +237,7 @@ void udp_echoclient_send(void)
 }
 
 /**
-  * @brief This function is called when an UDP datagrm has been received on the port UDP_PORT.
+  * @brief This function is called when an UDP datagram has been received on the port UDP_PORT.
   * @param arg user supplied argument (udp_pcb.recv_arg)
   * @param pcb the udp_pcb which received data
   * @param p the packet buffer that was received
@@ -264,8 +260,6 @@ void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
 
 
 /* USER CODE END 4 */
-
-//////////////////////////////////////////////////////////////////////////////////////////
 
 /**
   * @brief  This function is executed in case of error occurrence.
