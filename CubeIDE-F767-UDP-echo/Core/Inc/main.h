@@ -67,10 +67,10 @@ void udp_echoclient_send(void);
 //#define DEST_IP_ADDR2 0
 //#define DEST_IP_ADDR3 11
 
-#define DEST_IP_ADDR0 169
-#define DEST_IP_ADDR1 254
-#define DEST_IP_ADDR2 30
-#define DEST_IP_ADDR3 167
+#define DEST_IP_ADDR0 10
+#define DEST_IP_ADDR1 8
+#define DEST_IP_ADDR2 60
+#define DEST_IP_ADDR3 47
 
 #define UDP_SERVER_PORT 5005
 #define UDP_HOST_PORT 5005
@@ -81,5 +81,3 @@ void udp_echoclient_send(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
