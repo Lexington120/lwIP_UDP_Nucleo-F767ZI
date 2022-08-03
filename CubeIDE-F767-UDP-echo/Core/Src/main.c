@@ -102,10 +102,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		MX_LWIP_Process();
 
-		//If you want to send some other data
-		//udp_echoclient_send();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -180,7 +177,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
 }
-//////////////////////////////////////////////////////////////////////
+
 /* USER CODE BEGIN 4 */
 
 
@@ -264,8 +261,6 @@ void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
 
 
 /* USER CODE END 4 */
-
-//////////////////////////////////////////////////////////////////////////////////////////
 
 /**
   * @brief  This function is executed in case of error occurrence.
